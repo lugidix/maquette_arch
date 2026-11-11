@@ -1,0 +1,143 @@
+/* Maison Aubier — style « luxe crème » (tokens du skill style-luxe-creme). */
+:root {
+  --lux-cream: #f5eee9; --lux-sand: #e3e1d4; --lux-ivory: #fbf8f6;
+  --lux-olive: #373f1d; --lux-sage: #5c6e21; --lux-sage-grey: #8b8c78;
+  --lux-font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
+  --lux-font-body: "Inter Variable", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --lux-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --lux-dur: 0.9s; --lux-dur-slow: 1.4s;
+  --gutter: clamp(20px, 5vw, 80px);
+  --line: rgba(55, 63, 29, 0.14);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+.lux { background: var(--lux-cream); color: var(--lux-olive); font-family: var(--lux-font-body); font-size: 16px; line-height: 1.6; letter-spacing: -0.009em; -webkit-font-smoothing: antialiased; }
+.lux h1, .lux h2, .lux h3 { font-family: var(--lux-font-display); font-weight: 300; letter-spacing: -0.02em; line-height: 1.05; margin: 0; }
+.lux h2 { font-size: clamp(36px, 5vw, 72px); max-width: 16ch; }
+.lux p { margin: 0; max-width: 56ch; }
+.lux ul { list-style: none; margin: 0; padding: 0; }
+.lux button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+.lux :focus-visible { outline: 2px solid var(--lux-sage); outline-offset: 3px; border-radius: 4px; }
+.label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--lux-sage-grey); }
+
+.btn { display: inline-block; padding: 14px 30px; border: 1px solid var(--lux-olive); border-radius: 999px; color: var(--lux-olive); text-decoration: none; font-size: 14px; transition: background var(--lux-dur) var(--lux-ease-out-expo), color var(--lux-dur) var(--lux-ease-out-expo), border-color var(--lux-dur) var(--lux-ease-out-expo); }
+.btn:hover, .btn--fill { background: var(--lux-olive); color: var(--lux-cream); }
+.btn--fill:hover { background: var(--lux-sage); border-color: var(--lux-sage); }
+.btn--light { background: var(--lux-cream); color: var(--lux-olive); border-color: var(--lux-cream); }
+.btn--ghost { border-color: rgba(245, 238, 233, 0.4); color: var(--lux-cream); }
+.btn--ghost:hover, .btn--light:hover { background: var(--lux-sage); border-color: var(--lux-sage); color: var(--lux-cream); }
+
+[data-reveal] { opacity: 0; transform: translateY(40px); transition: opacity var(--lux-dur-slow) var(--lux-ease-out-expo), transform var(--lux-dur-slow) var(--lux-ease-out-expo); }
+[data-reveal].is-visible { opacity: 1; transform: none; }
+
+/* Navigation */
+.nav { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px var(--gutter); transition: background var(--lux-dur) var(--lux-ease-out-expo), padding var(--lux-dur) var(--lux-ease-out-expo); }
+.nav.is-scrolled { background: rgba(245, 238, 233, 0.86); backdrop-filter: blur(14px); padding-block: 12px; border-bottom: 1px solid var(--line); }
+.nav__logo { font-family: var(--lux-font-display); font-size: 22px; font-weight: 300; color: inherit; text-decoration: none; letter-spacing: -0.02em; }
+.nav__links { display: flex; gap: 32px; }
+.nav__links a { color: inherit; text-decoration: none; font-size: 14px; opacity: 0.75; transition: opacity 0.4s; }
+.nav__links a:hover { opacity: 1; }
+.nav__cta { padding: 10px 22px; }
+
+/* Hero */
+.hero { min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; gap: 22px; padding: 140px var(--gutter) clamp(40px, 7vh, 80px); }
+.hero__title { font-size: clamp(60px, 13vw, 200px); line-height: 0.95 !important; letter-spacing: -0.035em !important; }
+.char { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.char > span { display: inline-block; }
+.hero__lead { font-family: var(--lux-font-display); font-weight: 300; font-size: clamp(22px, 2.6vw, 36px); line-height: 1.2; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: clamp(32px, 6vh, 72px) 0 0; padding-top: 28px; border-top: 1px solid var(--line); }
+.stats dt { font-family: var(--lux-font-display); font-weight: 300; font-size: clamp(34px, 4.4vw, 64px); line-height: 1; letter-spacing: -0.02em; }
+.stats small { font-size: 0.4em; letter-spacing: 0; }
+.stats dd { margin: 8px 0 0; font-size: 13px; color: var(--lux-sage-grey); }
+
+/* Sections */
+.section { padding: clamp(80px, 12vh, 160px) var(--gutter); }
+.section--sand { background: var(--lux-sand); }
+.section > .label { margin-bottom: 20px; }
+.intro { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.intro__text { display: grid; gap: 22px; }
+.media { overflow: hidden; border-radius: 6px; margin: 0; }
+.film { aspect-ratio: 16 / 9; background: var(--lux-olive); position: relative; }
+.film video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.film__fallback { position: absolute; inset: 0; display: grid; place-content: center; gap: 10px; text-align: center; color: var(--lux-cream); }
+.film__fallback strong { font-family: var(--lux-font-display); font-weight: 300; font-size: clamp(32px, 4vw, 56px); }
+
+/* Visite 3D */
+.tour { position: relative; height: 100svh; min-height: 620px; background: var(--lux-cream); border-block: 1px solid var(--line); overflow: hidden; }
+.tour canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+.tour canvas:active { cursor: grabbing; }
+.tour__panel, .tour__card { position: absolute; z-index: 2; background: rgba(251, 248, 246, 0.84); backdrop-filter: blur(16px); border: 1px solid var(--line); border-radius: 10px; }
+.tour__panel { top: 88px; left: var(--gutter); width: 250px; padding: 18px; display: grid; gap: 14px; max-height: calc(100% - 120px); overflow: auto; }
+.tour__levels { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.tour__levels button { padding: 9px 8px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; transition: background 0.5s var(--lux-ease-out-expo), color 0.5s var(--lux-ease-out-expo); }
+.tour__levels button.is-active, .tour__levels button:hover { background: var(--lux-olive); color: var(--lux-cream); }
+.tour__rooms button { width: 100%; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 9px 2px; border-bottom: 1px solid var(--line); text-align: left; font-size: 15px; transition: padding 0.6s var(--lux-ease-out-expo), color 0.4s; }
+.tour__rooms li:last-child button { border-bottom: 0; }
+.tour__rooms small, .floor li small { font-size: 12px; color: var(--lux-sage-grey); white-space: nowrap; }
+.tour__rooms button:hover, .tour__rooms button.is-active { padding-left: 10px; color: var(--lux-sage); }
+.tour__card { right: var(--gutter); bottom: 28px; width: min(360px, calc(100% - 2 * var(--gutter))); padding: 20px; display: grid; gap: 8px; }
+.tour__card h3 { font-size: 34px; }
+.tour__surface { font-size: 13px; color: var(--lux-sage); }
+.tour__photo { margin: -8px -8px 6px; border-radius: 6px; overflow: hidden; aspect-ratio: 16 / 10; }
+.tour__photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tour__features { display: flex; flex-wrap: wrap; gap: 6px; }
+.tour__features li { font-size: 12px; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; }
+.tour__controls { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 8px; }
+.seg { display: flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+.seg button { padding: 7px 14px; border-radius: 999px; font-size: 13px; transition: background 0.5s var(--lux-ease-out-expo), color 0.5s var(--lux-ease-out-expo); }
+.seg button.is-active { background: var(--lux-olive); color: var(--lux-cream); }
+.tour__steps { display: flex; gap: 6px; }
+.tour__steps button { width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; transition: background 0.5s var(--lux-ease-out-expo), color 0.5s var(--lux-ease-out-expo); }
+.tour__steps button:hover { background: var(--lux-olive); color: var(--lux-cream); }
+.tour__tip { position: absolute; top: 0; left: 0; z-index: 3; pointer-events: none; padding: 6px 12px; border-radius: 999px; background: var(--lux-olive); color: var(--lux-cream); font-size: 12px; white-space: nowrap; }
+
+/* Niveaux */
+.floors { margin-top: clamp(40px, 7vh, 88px); border-top: 1px solid var(--line); }
+.floor { display: grid; grid-template-columns: minmax(80px, 1fr) minmax(0, 3fr) minmax(0, 4fr); gap: clamp(20px, 4vw, 64px); align-items: start; padding: clamp(28px, 5vh, 56px) 0; border-bottom: 1px solid var(--line); }
+.floor__num { font-family: var(--lux-font-display); font-weight: 300; font-size: clamp(64px, 9vw, 140px); line-height: 0.85; color: var(--lux-sage); }
+.floor h3 { font-size: clamp(30px, 3.4vw, 48px); margin: 6px 0 12px; }
+.floor ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
+.floor li button { width: 100%; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); text-align: left; transition: padding 0.6s var(--lux-ease-out-expo), color 0.4s; }
+.floor li button:hover { padding-left: 10px; color: var(--lux-sage); }
+
+/* Prestations */
+.specs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px); margin-top: clamp(40px, 7vh, 88px); }
+.specs li { border-top: 1px solid var(--line); padding-top: 20px; }
+.specs h3 { font-size: 28px; margin-bottom: 10px; }
+.specs p { font-size: 15px; opacity: 0.8; }
+
+/* Contact + pied */
+.contact { background: var(--lux-olive); color: var(--lux-cream); display: grid; gap: 24px; }
+.contact h2 { max-width: 14ch; }
+.contact p { opacity: 0.8; }
+.contact div { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 24px var(--gutter); background: var(--lux-olive); color: rgba(245, 238, 233, 0.6); font-size: 13px; border-top: 1px solid rgba(245, 238, 233, 0.14); }
+
+@media (max-width: 860px) {
+  .nav__links { display: none; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .intro { grid-template-columns: 1fr; }
+  .tour__panel { top: 72px; left: 12px; right: 12px; width: auto; padding: 10px; gap: 8px; }
+  .tour__panel > .label { display: none; }
+  .tour__levels { grid-template-columns: repeat(4, 1fr); }
+  .tour__levels button { font-size: 12px; padding: 8px 4px; }
+  .tour__rooms { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+  .tour__rooms button { border: 1px solid var(--line) !important; border-radius: 999px; padding: 6px 12px !important; white-space: nowrap; font-size: 13px; }
+  .tour__rooms small { display: none; }
+  .tour__card { left: 12px; right: 12px; bottom: 12px; width: auto; padding: 14px; gap: 4px; }
+  .tour__card h3 { font-size: 26px; }
+  .tour__photo, .tour__features { display: none !important; }
+  .tour__card #card-desc { font-size: 14px; line-height: 1.45; }
+  .floor { grid-template-columns: 1fr; gap: 16px; }
+  .floor ul, .specs { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}
+
+/* En immersion, la fiche se fait discrete pour laisser voir la piece. */
+.tour[data-view="eye"] .tour__features, .tour[data-view="eye"] .tour__photo { display: none !important; }
+.tour[data-view="eye"] .tour__panel { opacity: 0.5; transition: opacity 0.6s; }
+.tour[data-view="eye"] .tour__panel:hover, .tour[data-view="eye"] .tour__panel:focus-within { opacity: 1; }

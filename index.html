@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maison Aubier — triplex contemporain, visite 3D</title>
+  <meta name="description" content="Maison Aubier : un triplex contemporain de 240 m² sur trois niveaux. Visitez chaque pièce en 3D, à votre rythme.">
+  <meta name="theme-color" content="#f5eee9">
+</head>
+<body class="lux">
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#top">Maison Aubier</a>
+    <nav class="nav__links" aria-label="Navigation principale">
+      <a href="#maison">La maison</a>
+      <a href="#visite">Visite 3D</a>
+      <a href="#niveaux">Niveaux</a>
+      <a href="#prestations">Prestations</a>
+    </nav>
+    <a class="btn nav__cta" href="#contact">Prendre rendez-vous</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="label" data-reveal>Triplex contemporain · 240 m²</p>
+      <h1 class="hero__title" data-split>Maison Aubier</h1>
+      <p class="hero__lead" data-reveal>Trois niveaux. Une seule lumière.</p>
+      <div class="hero__actions" data-reveal>
+        <a class="btn btn--fill" href="#visite">Commencer la visite</a>
+        <a class="btn" href="#maison">Voir le film</a>
+      </div>
+      <dl class="stats" id="stats"></dl>
+    </section>
+
+    <section class="section intro" id="maison">
+      <div class="intro__text">
+        <p class="label" data-reveal>La maison</p>
+        <h2 data-reveal>Du jardin au toit, la même lumière du sud.</h2>
+        <p data-reveal>Maison Aubier s’organise sur trois niveaux, un par moment de la journée. En bas, on reçoit et on cuisine, de plain-pied avec le jardin. Au milieu, on dort et on lit. En haut, un lounge vitré s’ouvre sur trente-deux mètres carrés de terrasse.</p>
+        <p data-reveal>Chêne massif, pierre claire, façades sauge : trois matières, du sol au dernier étage.</p>
+      </div>
+      <figure class="media film" data-reveal>
+        <video id="film" src="/media/film.mp4" poster="/media/film-poster.jpg" controls muted loop autoplay playsinline preload="metadata"></video>
+        <div class="film__fallback" id="film-fallback" hidden>
+          <span class="label">Film de présentation</span>
+          <strong>Maison Aubier</strong>
+        </div>
+      </figure>
+    </section>
+
+    <section class="tour" id="visite" aria-label="Visite 3D de la maison">
+      <canvas id="scene" aria-label="Maquette 3D interactive de la Maison Aubier"></canvas>
+
+      <aside class="tour__panel">
+        <p class="label">Visite 3D</p>
+        <div class="tour__levels" id="levels" role="tablist" aria-label="Niveaux"></div>
+        <ul class="tour__rooms" id="rooms"></ul>
+      </aside>
+
+      <article class="tour__card" id="card" aria-live="polite">
+        <figure class="tour__photo" id="card-photo" hidden><img id="card-img" alt=""></figure>
+        <p class="label" id="card-tag">Vue d’ensemble</p>
+        <h3 id="card-title">Maison Aubier</h3>
+        <p class="tour__surface" id="card-surface">240 m² · 3 niveaux</p>
+        <p id="card-desc">Cliquez un niveau de la maquette, puis une pièce. Glissez pour tourner autour.</p>
+        <ul class="tour__features" id="card-features"></ul>
+        <div class="tour__controls">
+          <div class="seg" role="group" aria-label="Mode de vue">
+            <button type="button" data-view="doll" class="is-active">Maquette</button>
+            <button type="button" data-view="eye">Immersion</button>
+          </div>
+          <div class="tour__steps">
+            <button type="button" id="prev" aria-label="Pièce précédente">←</button>
+            <button type="button" id="next" aria-label="Pièce suivante">→</button>
+          </div>
+        </div>
+      </article>
+
+      <div class="tour__tip" id="tip" hidden></div>
+    </section>
+
+    <section class="section section--sand" id="niveaux">
+      <p class="label" data-reveal>Les niveaux</p>
+      <h2 data-reveal>Un étage par moment de la journée.</h2>
+      <div class="floors" id="floors"></div>
+    </section>
+
+    <section class="section" id="prestations">
+      <p class="label" data-reveal>Prestations</p>
+      <h2 data-reveal>Peu de matières, bien choisies.</h2>
+      <ul class="specs">
+        <li data-reveal><h3>Chêne massif</h3><p>Parquet à lames larges sur les trois niveaux, escalier assorti.</p></li>
+        <li data-reveal><h3>Pierre claire</h3><p>Plans de travail, salles d’eau et îlot dans la même pierre calcaire.</p></li>
+        <li data-reveal><h3>Baies plein sud</h3><p>Sept mètres de vitrage au salon, double façade vitrée au lounge.</p></li>
+        <li data-reveal><h3>Triple vitrage</h3><p>Menuiseries bois-aluminium, occultation intégrée dans les chambres.</p></li>
+        <li data-reveal><h3>Chauffage au sol</h3><p>Pompe à chaleur géothermique, plancher chauffant et rafraîchissant.</p></li>
+        <li data-reveal><h3>Terrasse en toiture</h3><p>Platelage bois, garde-corps en verre, jardinières et point d’eau.</p></li>
+      </ul>
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2 data-reveal>Visitez chaque pièce, à votre rythme.</h2>
+      <p data-reveal>Puis venez la voir en vrai. Les visites se font sur rendez-vous, du mardi au samedi.</p>
+      <div data-reveal>
+        <a class="btn btn--light" href="mailto:bonjour@maison-aubier.example?subject=Visite%20de%20la%20Maison%20Aubier">Prendre rendez-vous</a>
+        <a class="btn btn--ghost" href="#visite">Reprendre la visite 3D</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Maison Aubier</span>
+    <span>Maison fictive — projet de démonstration.</span>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
