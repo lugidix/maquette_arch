@@ -32,5 +32,4 @@ vite.log
 Thumbs.db
 
 # HyperFrames cache & artifacts
-.hyperframes/artifacts/
-.hyperframes/cache/
+**/.hyperframes/
