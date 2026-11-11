@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maison Aubier — triplex contemporain, visite 3D</title>
+  <meta name="description" content="Maison Aubier : un triplex contemporain de 240 m² sur trois niveaux. Plans, film et visite 3D pièce par pièce.">
+  <meta name="theme-color" content="#f3efe8">
+</head>
+<body>
+  <!-- Chargement : la façade se trace puis s'encre -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-frame">
+      <div class="loader-draw" id="loader-draw"></div>
+      <div class="loader-bar" id="loader-bar"><span class="mono" id="loader-pct">000 %</span></div>
+      <div class="loader-info mono">
+        <p>BIENVENUE À LA MAISON AUBIER</p>
+        <dl>
+          <dt>TYPE</dt><dd>TRIPLEX CONTEMPORAIN</dd>
+          <dt>SURFACE</dt><dd>240 M² HABITABLES</dd>
+          <dt>NIVEAUX</dt><dd>JARDIN / NUIT / CIEL</dd>
+          <dt>ORIENTATION</dt><dd>PLEIN SUD</dd>
+        </dl>
+      </div>
+      <ol class="loader-log mono" id="loader-log">
+        <li>001 TRACER LES FONDATIONS</li><li>002 MONTER LES MURS DU NIVEAU 0</li><li>003 COULER LA DALLE DU NIVEAU 1</li>
+        <li>004 POSER LES BAIES PLEIN SUD</li><li>005 HABILLER LE NIVEAU 2 DE BOIS</li><li>006 OUVRIR LA TERRASSE</li>
+        <li>007 PLANTER LE JARDIN</li><li>008 MEUBLER LES DIX PIÈCES</li><li>009 ALLUMER LA LUMIÈRE</li><li>010 OUVRIR LA PORTE</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Cadre global, règles et coordonnées du curseur -->
+  <div class="gframe" aria-hidden="true">
+    <i class="ruler ruler--b"></i><i class="ruler ruler--l"></i>
+    <span class="gframe-plus">+</span>
+    <span class="gframe-xy mono" id="xy">X: 0000 PX &nbsp; Y: 0000 PX</span>
+  </div>
+
+  <header class="header" id="header">
+    <a class="header-logo" href="#top" aria-label="Maison Aubier, haut de page">
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 34V17h12V9h12v8h6v17z"/><path d="M5 26h30M17 17v17M29 17v9"/></svg>
+      <span>Maison Aubier</span>
+    </a>
+    <nav class="header-nav" aria-label="Navigation principale">
+      <a href="#maison">La maison</a>
+      <a href="#visite">Visite 3D</a>
+      <a href="#niveaux">Niveaux</a>
+      <a href="#pieces">Pièces</a>
+      <a class="is-accent" href="#contact">Rendez-vous <span aria-hidden="true">→</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO : la façade, à encrer au curseur -->
+    <section class="hero">
+      <div class="hero-stage" id="hero-stage">
+        <div class="hero-draw" id="hero-draw"></div>
+        <p class="hero-hint mono">[ Survolez la façade pour l’encrer ]</p>
+        <div class="tag tag--a"><i></i><span class="mono">N2 · LOUNGE</span><b>Double façade vitrée, 40 m²</b></div>
+        <div class="tag tag--b"><i></i><span class="mono">N0 · SALON</span><b>Baie plein sud de 7 m</b></div>
+      </div>
+      <div class="hero-bottom">
+        <h1 class="h1" data-lines>Un triplex qui suit la lumière, du jardin au toit</h1>
+        <div class="hero-side">
+          <p data-lines>Trois niveaux, dix pièces, une terrasse au-dessus des toits. Parcourez les plans, puis entrez dans chaque pièce en 3D.</p>
+          <a class="btn" data-btn href="#visite">Commencer la visite</a>
+        </div>
+        <ul class="hero-work mono">
+          <li data-block><b>240 M²</b> habitables</li>
+          <li data-block><b>3 NIVEAUX</b> jardin, nuit, ciel</li>
+          <li data-block><b>32 M²</b> de terrasse</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- INTRO : plan encré + texte qui se remplit -->
+    <section class="intro" id="maison">
+      <div class="intro-img box">
+        <i class="plus tl"></i><i class="plus tr"></i><i class="plus bl"></i><i class="plus br"></i>
+        <div data-ink="plan0"></div>
+        <span class="coord coord--bl mono">[0,0]</span><span class="coord coord--br mono">[1200,800]</span>
+      </div>
+      <div class="intro-body">
+        <p class="label mono" data-block>LA MAISON</p>
+        <h2 class="h2 fill-text" id="fill-text">En bas, on reçoit et on cuisine de plain-pied avec le jardin. Au milieu, on dort et on lit. En haut, un lounge vitré s’ouvre sur la terrasse.</h2>
+        <a class="btn btn--line" data-btn href="#niveaux">Voir les trois niveaux</a>
+        <div class="matieres">
+          <p class="label mono">MATIÈRES</p>
+          <ul id="matieres"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATOUTS -->
+    <section class="atouts">
+      <div class="sec-head">
+        <p class="label mono" data-block>ATOUTS</p>
+        <h2 class="h2" data-lines>Une maison dessinée autour de quatre idées simples</h2>
+        <p class="sub" data-lines>Pas de pièce en trop, pas de couloir perdu. Chaque niveau a un rôle, et la lumière du sud fait le reste.</p>
+      </div>
+      <div class="atouts-grid" id="atouts"></div>
+    </section>
+
+    <!-- VISITE 3D -->
+    <section class="tour" id="visite" aria-label="Visite 3D de la maison">
+      <canvas id="scene" aria-label="Maquette 3D interactive de la Maison Aubier"></canvas>
+      <div class="tour-head">
+        <p class="label mono">VISITE 3D</p>
+        <h2 class="h3">Entrez dans chaque pièce</h2>
+      </div>
+      <aside class="tour-panel box">
+        <i class="plus tl"></i><i class="plus br"></i>
+        <div class="tour-levels mono" id="levels" role="tablist" aria-label="Niveaux"></div>
+        <ul class="tour-rooms" id="rooms"></ul>
+      </aside>
+      <article class="tour-card box" id="card" aria-live="polite">
+        <i class="plus tl"></i><i class="plus tr"></i><i class="plus bl"></i><i class="plus br"></i>
+        <figure class="tour-photo" id="card-photo" hidden><img id="card-img" alt=""></figure>
+        <p class="label mono" id="card-tag">VUE D’ENSEMBLE</p>
+        <h3 class="h4" id="card-title">Maison Aubier</h3>
+        <p class="mono tour-surface" id="card-surface">240 M² · 3 NIVEAUX</p>
+        <p id="card-desc">Cliquez un niveau de la maquette, puis une pièce. Glissez pour tourner autour.</p>
+        <ul class="tour-features mono" id="card-features"></ul>
+        <div class="tour-controls">
+          <div class="seg mono" role="group" aria-label="Mode de vue">
+            <button type="button" data-view="doll" class="is-active">Maquette</button>
+            <button type="button" data-view="eye">Immersion</button>
+          </div>
+          <div class="tour-steps">
+            <button type="button" id="prev" aria-label="Pièce précédente">←</button>
+            <button type="button" id="next" aria-label="Pièce suivante">→</button>
+          </div>
+        </div>
+      </article>
+      <span class="coord coord--tr mono">[1200,0]</span><span class="coord coord--bl2 mono">[0,800]</span>
+      <div class="tour-tip mono" id="tip" hidden></div>
+    </section>
+
+    <div class="marquee mono" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+    <!-- FILM + PLANS -->
+    <section class="platform" id="film">
+      <article class="platform-item">
+        <div class="platform-text">
+          <p class="platform-num mono" data-block>[01]</p>
+          <h2 class="h2" data-lines>Le film</h2>
+          <p class="sub" data-lines>Quatorze secondes pour comprendre la maison : sa coupe, ses trois niveaux, ses chiffres.</p>
+          <a class="btn btn--line" data-btn href="#visite">Puis la visiter</a>
+        </div>
+        <figure class="platform-media box" data-img>
+          <i class="plus tl"></i><i class="plus tr"></i><i class="plus bl"></i><i class="plus br"></i>
+          <video id="film-video" src="/media/film.mp4" poster="/media/film-poster.jpg" muted loop playsinline preload="metadata"></video>
+          <button type="button" class="film-toggle mono" id="film-toggle" aria-label="Lire ou mettre en pause le film">PAUSE</button>
+        </figure>
+      </article>
+      <article class="platform-item platform-item--rev">
+        <div class="platform-text">
+          <p class="platform-num mono" data-block>[02]</p>
+          <h2 class="h2" data-lines>La façade sud</h2>
+          <p class="sub" data-lines>Deux niveaux clairs, un volume de bois en retrait, et la terrasse qui prolonge le lounge. Neuf mètres du jardin à l’acrotère.</p>
+          <a class="btn btn--line" data-btn href="#pieces">Voir les dix pièces</a>
+        </div>
+        <div class="platform-media box">
+          <i class="plus tl"></i><i class="plus tr"></i><i class="plus bl"></i><i class="plus br"></i>
+          <div data-ink="elevation"></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- NIVEAUX : rail fixe, plans qui défilent -->
+    <section class="why" id="niveaux">
+      <div class="sec-head">
+        <p class="label mono" data-block>LES NIVEAUX</p>
+        <h2 class="h2" data-lines>Un étage par moment de la journée</h2>
+        <p class="sub" data-lines>Le jour en bas, la nuit au milieu, le ciel en haut. Les trois plans sont à la même échelle.</p>
+        <p class="mono scroll-hint" data-block>[ Faites défiler ]</p>
+      </div>
+      <div class="why-body">
+        <div class="why-rail" id="rail"></div>
+        <div class="why-stage" id="stage"></div>
+      </div>
+    </section>
+
+    <!-- PIÈCES -->
+    <section class="rooms" id="pieces">
+      <div class="rooms-preview">
+        <div class="rooms-preview-inner box">
+          <i class="plus tl"></i><i class="plus tr"></i><i class="plus bl"></i><i class="plus br"></i>
+          <div id="room-plan"></div>
+          <img id="room-img" alt="" hidden>
+        </div>
+      </div>
+      <div class="rooms-main">
+        <p class="label mono" data-block>LES PIÈCES</p>
+        <h2 class="h2" data-lines>Dix pièces et une terrasse</h2>
+        <ul class="rooms-list" id="rooms-list"></ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="cta-head mono"><span>[0,246]</span><span>[831,0]</span><span>[2303,0]</span><span>[0,544]</span></div>
+      <div class="cta-main">
+        <h2 class="h1" data-lines>Venez la voir en vrai</h2>
+        <p class="sub" data-lines>Les visites se font sur rendez-vous, du mardi au samedi. Comptez une heure pour les trois niveaux.</p>
+        <a class="btn" data-btn href="mailto:bonjour@maison-aubier.example?subject=Visite%20de%20la%20Maison%20Aubier">Prendre rendez-vous</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-cols">
+      <div><p class="label mono">LA MAISON</p><a href="#maison">Présentation</a><a href="#film">Film</a><a href="#niveaux">Niveaux</a></div>
+      <div><p class="label mono">VISITER</p><a href="#visite">Visite 3D</a><a href="#pieces">Pièces</a><a href="#contact">Rendez-vous</a></div>
+      <div><p class="label mono">CONTACT</p><a href="mailto:bonjour@maison-aubier.example">bonjour@maison-aubier.example</a><span>Du mardi au samedi</span></div>
+    </div>
+    <div class="giant" id="giant" aria-hidden="true">
+      <span class="giant-outline">AUBIER</span>
+      <span class="giant-ink">AUBIER</span>
+    </div>
+    <div class="footer-bottom mono"><span>©2026 MAISON AUBIER</span><span>MAISON FICTIVE — PROJET DE DÉMONSTRATION</span></div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
